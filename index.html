@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hick's Law</title>
+
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/skeleton.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+        <link rel="stylesheet" href="css/c3.min.css">
+
+        <link rel="stylesheet" href="css/style.css" />
+
+    </head>
+    <body>
+        
+        <div class="header">
+            <div class="container">
+                <br>
+                    <br>
+
+                    <div id="scaleme">
+                    <span style="text-transform: uppercase; font-size: 1.8rem; font-weight: 400; color:#FF7C00;">Explorable Explanation </span>
+                <h1 class="heading1 center">Desiging better interfaces with Hick's Law</h1>  
+                <br>
+                <div class="container-ak">
+                    Hick's law describes the time it takes for a person to make a decision as a result of the possible choices he or she has: increasing the number of choices will increase the decision time. 
+                    
+                    <a target="_blank" href="https://en.wikipedia.org/wiki/Hick%27s_law">[Wikipedia]</a>
+                    <br><br>
+                    Given n equally probable choices, the average reaction time T required to choose among the choices is approximately:
+
+                    <br>
+                    <br>
+                    <!-- $$T =  b*log(n+1)$$ -->
+                    <span style="margin-left: 50px;">\(T = a + b*log_2(n+1)\)</span>
+                    <br><br>
+                    where coefficients \(a\) and  \(b\) depend  on  context  conditions,  including the  way  the choices are presented and the user’s degree of familiarity with the subject.
+
+  <br>
+  <br><br>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="regular ">
+            <br><br>
+
+
+            <div class="container">
+                <h2 class="heading2 center">Wait, what ? </h2>
+                <br>
+                <div class="container-ak">
+                        To get a better sense of how Hick's law works, let's go through a simple activity. Let's assume you are designing NASA's new spaceship and it can be any color you like. However, you can only select one color from a randomly generated set of colors that NASA gives you. In this activity we will see how the time taken to choose a color increases as we increase the pool of colors to choose from.
+
+                        <br> <br>
+
+                       <strong style="font-weight: 700;"> Let's Begin!</strong>
+
+                        <br> <br>
+
+                        <strong style="font-weight:600;">  Step 1: </strong> Let's decide the number of colors to choose from (start at a large number like 8 colors)
+
+                        <br>
+
+
+                            <select class="DropdownClass" name="Count" id="linear">
+                                    <option value="" selected disabled hidden>Choose here</option>
+                                    <option value="2">2 colors</option>
+                                    <option value="3">3 colors</option>
+                                    <option value="4">4 colors</option>
+                                    <option value="5">5 colors</option>
+                                    <option value="6">6 colors</option>
+                                    <option value="7">7 colors</option>
+                                    <option value="8">8 colors</option>
+
+                            </select>
+
+
+
+
+                        <br><br><br>
+
+
+                        <strong style="font-weight:600;">  Step 2: </strong> See the black boxes below? They will show the random colors and a timer will start once you hit <strong> SHOW ME COLORS</strong>.
+                        Just click on your favorite color from the given set of random colors after hitting the button.
+                        <br><br>
+                        
+                        <div style="width: 100; display: flex; justify-content: center;">
+                        <button class="linearButton btn btn-1 btn-1a">SHOW ME COLORS</button>
+                        </div>
+
+
+                        <br>
+
+                        <div class="showLinear">
+
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+
+                            </div>
+
+
+                            <br><br>
+
+
+
+                        <strong style="font-weight:600;">  Step 3: </strong><div style="display: inline" id="timeLinear">Time taken to select color: </div>
+                        <br>
+                        <div style="display: inline; margin-left: 8rem;" id="avgTimeLinear">Current average time for these number of choices is: </div>
+
+                        <br>
+                        <br>
+
+
+                        <strong style="font-weight:600;">  Step 4: </strong> Go back to <STRONg> Step 2 </STRONg> and complete the trial a few more times to get a better representation of your reaction time.
+
+                        <br>
+                        <br>
+
+                        <strong style="font-weight:600;">  Step 5: </strong> Scroll below to see your results (if you want) and then go back to <STRONg> Step 1 </STRONg> and change the number of color options. On the very minimum do this for a small number of choice (for example, 3 choices) and a large number of choices (say 8, choices).
+
+
+                        <br>
+                        <br>
+                            <hr>
+                            <br>
+
+
+                        <h2 class="heading2 center" style="font-weight: 700;"> Results </h2>
+                        <br>
+                        The scatter plot below shows your trials which each dot representing the color you selected and the time you took. The red line is generated using regression and it predicts how your time. You can always go back and complete more trials to see how your result changes.
+
+                        <br> <br>
+
+                        <div id="linearAvgGraph">
+
+                            </div>
+
+                        <br>                        <br>
+
+                        <strong class="heading2" style="padding-bottom:1.5rem;">However, there are a few caveats..</strong>
+                        <br>
+                        Most probably your time went up as the number of choices increased, however, if it did not, there could be multiple reasons as to why it did not:
+                        <br>
+
+                        <ol style="padding-top:2rem;">
+                            <li> 
+                                The distance of START button to the colors to select is variable and a major factor which can make your results look different.
+                            </li>
+
+                            <li>
+                                Our eyes are good at spotting differences and finding patterns. This might pull your vision towards certain colors and you might not actually go through the entire list of colors, thus, it wouldn't matter how many options there were to begin with.
+                            </li>
+                        </ol>
+
+                            <br>
+
+
+
+                        
+
+
+
+
+
+                       
+                </div>
+            </div>
+
+            <br>  <br>
+
+        </div>
+
+        <div class="regular grayBg">
+            <br><br>
+    
+    
+                <div class="container">
+                    <h2 class="heading2 center">But how does this apply to UX? </h2>
+                    <br>
+                    <div class="container-ak">
+                            Hick's law is often cited to justify menu design decisions. If menus are really long, it will take a lot of time for the user to find something, as the number of choices are large.
+
+                            <br><br>
+
+                            For example, in the Amazon Menu shown below try to find <strong> <u> Exam Central</u></strong>. 
+                            <br> (Note: Menu has been edited for this exercise).
+                            <br>
+                            <br> 
+                            <figure>
+                                    <img src="img/amazonMenuNew.png" class="images" alt="">
+
+                            </figure>
+
+                            <br> <br>
+
+                            Did you find it?
+
+                            <br> <br>
+
+                            If not, don't worry. It is really hard to find anything in such a menu. (BTW it's in the second group in last column)
+
+                            <br> <br>
+                            
+                            This is why menus aren't designed like this. Following an extension of Hick's law, if there is a categorization of data, the taken to find items increases are the options increase but it does in a sub-linear manner. 
+
+                            <br> <br>
+
+                            To demonstrate the point, look at the menu below and try to find the same word, <strong> <u> Exam Central</u></strong>.
+
+                            <br> <br>
+
+                            <figure>
+                                    <img src="img/amazonNew.png" class="images" alt="">
+                                </figure>
+
+                                <br> 
+
+                                Anything is easier to find in this menu because of better categorization and information scent. If you were searching for say Televisions, you know they would either be in the category of TV, Appliances and Electronics. Compared to the first menu, you would have had to manually scan the list for all items. In this case you need to scan the list but a smaller list (list of categories).
+
+                                <br>
+                                <br>
+                      
+                            </div>
+
+                   
+                </div>
+
+
+    
+                
+        </div>
+
+
+
+        <div class="regular2">
+            <br><br>
+    
+    
+                <div class="container">
+                    <h2 class="heading2 center">Linear vs Sublinear Time </h2>
+                    <br>
+                    <div class="container-ak">
+                        To see how categorization of data affects the time taken to make a choice, let's go through another activity. 
+                        
+                        <br> <br>
+                        In this activity let us assume that you have to pick a shade of <strong> <u> RED</u> </strong> from the randomly generated colors. However, this time the colors will be categorized. 
+                        <br> <br>
+                        Let's say one category is RED and the other category is not RED. The categorization could be done in any way but since you are only interested in the RED color, it wouldn't matter to you.
+
+                        <br> <br>
+                        <strong style="font-weight:600;">  Step 1: </strong> Let's decide the number of colors to choose from (start at a large number like 8 colors)
+
+                        <br>
+                            <select class="CatDropdownClass" name="Count" id="linear">
+                                    <option value="" selected disabled hidden>Choose here</option>
+                                    <option value="2">2 colors</option>
+                                    <option value="3">3 colors</option>
+                                    <option value="4">4 colors</option>
+                                    <option value="5">5 colors</option>
+                                    <option value="6">6 colors</option>
+                                    <option value="7">7 colors</option>
+                                    <option value="8">8 colors</option>
+
+                            </select>
+
+
+
+
+                        <br><br><br>
+
+
+                        <strong style="font-weight:600;">  Step 2: </strong> The red colors will always be in the <strong>starting</strong> of the list. Select your favorite shade of red!
+                        <br><br>
+                        
+                        <div style="width: 100; display: flex; justify-content: center;">
+                        <button class="linearCButton btn btn-1 btn-1a">SHOW ME COLORS</button>
+                        </div>
+
+
+                        <br>
+
+                        <div class="showLinear">
+
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+                                <svg class="CatCommonAttribute" width="110" height="110">
+                                    <rect width="100" height="100" rx="15" ry="15"  />
+                                </svg>
+
+                            </div>
+
+
+                            <br><br>
+
+
+
+                        <strong style="font-weight:600;">  Step 3: </strong><div style="display: inline" id="CtimeLinear">Time taken to select color: </div>
+                        <br>
+                        <div style="display: inline; margin-left: 8rem;" id="CavgTimeLinear">Current average time for these number of choices is: </div>
+
+                        <div id="ClinearAvgGraph">
+
+                            </div>
+
+
+
+
+
+                    </div>
+
+
+                            
+
+                   
+                </div>
+
+                
+    
+                
+        </div>
+
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+
+            <script src="js/c3.min.js"></script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/appC.js"></script>
+
+    </body>
+</html>

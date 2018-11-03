@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300,400,600');
+
+*{
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+.scaleme{
+    transform: scale(.8);
+    transform-origin: 0 0;
+}
+
+body{
+    font-size:62.5%;
+
+}
+
+.header{
+    background-color: black;
+    color:white;
+    font-size: 2.4rem;
+    font-weight: 300;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+
+
+.heading1{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.heading2{
+
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.heading3{
+    font-size: 2.5rem;
+}
+
+.container-ak{
+    width: 80%;
+}
+
+.grayBg{
+    background-color: #e8e8e8;
+    padding-bottom: 2.4rem;
+
+}
+.regular{
+    color:black;
+    font-size: 2.4rem;
+    font-weight: 300;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+
+.regular2{
+    color:black;
+    background: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 300;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+.images{
+    width: 130%;
+    font-size: 2rem;
+    text-align: center;
+    color:black;
+    font-weight: 700;
+    padding-top: .7rem;
+}
+
+
+#linear{
+    margin-top: 2rem;
+    width: 25rem;
+
+}
+
+.showLinear{
+    width: 120%;
+}
+
+
+.linearButton{
+    margin: 0 auto !important;
+    padding: 0.3rem 5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    font-weight: 600;
+    color: white;
+    background:#003EFF;
+}
+
+
+
+/* D3 Styles */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+
+
+
+.CommonAttribute:hover{
+    position: relative;
+    animation-duration: 3s;
+}
+
+ol li{
+    padding-left: 3.2rem;
+}
+
+.regression {
+    stroke-width: 2px;
+    stroke: red;
+    stroke-dasharray: 10,5;
+  }
+
+  .axis { 
+      font-size: 1.8rem; 
+      font-weight: 100;
+
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+
+    .DropdownClass{
+        height: 5rem;
+    }
+
+
+
+    .btn {
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: none;
+        cursor: pointer;
+        padding: 10px 60px;
+        border-radius: 20rem;
+        display: inline-block;
+        margin: 15px 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        outline: none;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    
+    .btn:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    
+    /* Pseudo elements for icons */
+    .btn:before,
+    .icon-heart:after,
+    .icon-star:after,
+    .icon-plus:after,
+    .icon-file:before {
+        font-family: 'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+    }
+
+/* Button 1 */
+.btn-1 {
+	border: 3px solid #0e83cd;
+    color: #0e83cd;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+	color: #fff;
+	background: #0e83cd;
+}
+    
+
+a{
+    color: white;
+
+}
+
+a:hover{
+    color: #fff;
+}
